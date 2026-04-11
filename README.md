@@ -41,11 +41,14 @@ To run the Interactive Builder locally on your machine:
 4. Open your browser and navigate to http://localhost:5173/ to explore the Interactive Builder.
 
 
-# 🏗 Architecture Overview
-Instead of creating a separate React component for each widget, this project uses a powerful Universal Hook Pattern:
-useSmartWidget.js: Analyzes the incoming React state (Props) and transforms it into the specific payload structure (opt and targets) expected by the SmartWidgets base class. It bypasses React's virtual DOM to update the SVG nodes directly via the controller's update() method for maximum performance.
-SmartWidget.jsx: The UI wrapper that renders the required Custom HTML Element (e.g., <smart-ui-pie>) and binds the hook to its ref.
-📜 License
-This project and the underlying SmartUI library are licensed under the MIT License.
-Copyright © 2018-2026 Michael Goyberg. All rights reserved.
+## 🏗 Architecture Overview
 
+Instead of creating a separate React component for each widget, this project uses a powerful **Universal Hook Pattern**:
+
+* **`useSmartWidget.js`**: Analyzes the incoming React state (Props) and transforms it into the specific payload structure (`opt` and `targets`) expected by the SmartWidgets base class. It bypasses React's virtual DOM to update the SVG nodes directly via the controller's `update()` method for maximum performance.
+* **`SmartWidget.jsx`**: The UI wrapper that renders the required Custom HTML Element (e.g., `<smart-ui-pie>`) and binds the hook to its `ref`.
+
+## 📜 License
+
+This project and the underlying SmartUI library are licensed under the **MIT License**.
+Copyright © 2018-2026 Michael Goyberg. All rights reserved.

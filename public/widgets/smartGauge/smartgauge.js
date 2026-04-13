@@ -1137,8 +1137,8 @@ class SmartGaugeElement extends HTMLElement {
     }
     this._stwdg.init(this._o);
     let size = Math.max(this._stwdg._bp.height, this._stwdg._bp.width);
-    this._svgroot.setAttribute("height", size);
-    this._svgroot.setAttribute("width", size);
+    this._svgroot.setAttribute("height", "100%");
+    this._svgroot.setAttribute("width", "100%");
     this._svgroot.setAttribute("viewBox", `0 0 ${size} ${size}`);
   }
   

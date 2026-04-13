@@ -1,35 +1,36 @@
-/**
- * Universal Wrapper Component for all SmartUI Web Components.
- * 
- * This component acts as a bridge between React's declarative DOM 
- * and the imperative nature of custom Web Components.
- * By using the 'elementTag' prop, it can dynamically render any widget 
- * from the SmartUI library (e.g., 'smart-ui-bar', 'smart-ui-pie').
- */
 import React, { useRef } from 'react';
 import { useSmartWidget } from '../hooks/useSmartWidget';
 
 const SmartWidget = ({ 
-  elementTag = "smart-ui-bar", // The native HTML tag of the custom element
-  id,                          // Unique identifier
-  className = '',              // CSS class string for styling
-  target = {},                 // Operational data (Object or Array)
-  opt = {}                     // Dynamic settings and layout configuration
+  elementTag = "smart-ui-bar", 
+  id, 
+  className = '', 
+  target = {},
+  opt = {} 
 }) => {
   const widgetRef = useRef(null);
 
-  // Bind the universal logic hook to handle data and options updates
+  // Наш хук для обновления данных "на лету"
   useSmartWidget(widgetRef, id, target, opt);
 
-  // In React, assigning a string to a capitalized variable name 
-  // allows JSX to dynamically render it as a corresponding HTML tag.
   const CustomTag = elementTag;
+
+  // МАГИЯ ЗДЕСЬ: 
+  // Превращаем camelCase ключи из объекта opt (например, varFillColor, innerRadius) 
+  // в правильные HTML-атрибуты с дефисами (var-fill-color, inner-radius),
+  // чтобы Web Component увидел их в момент connectedCallback!
+  const htmlAttributes = {};
+  for (const [key, value] of Object.entries(opt)) {
+    const attrName = key.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
+    htmlAttributes[attrName] = value;
+  }
 
   return (
     <CustomTag
       ref={widgetRef}
       id={id}
-      class={className} // Custom Web Components usually prefer 'class' over 'className'
+      class={className}
+      {...htmlAttributes} // <-- Разворачиваем атрибуты прямо в тег!
     >
       This browser does not support custom elements.
     </CustomTag>

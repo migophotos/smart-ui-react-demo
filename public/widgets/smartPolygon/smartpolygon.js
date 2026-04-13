@@ -750,8 +750,8 @@ ${optStr}  };
 		SmartTooltip.hideTooltip(evt);
 	}
 	_onClick(event) {
-		evt.stopPropagation();
-		evt.preventDefault();
+		event.stopPropagation();
+		event.preventDefault();
         if (this._o.isLink && this._o.role != 'demoMode') {
 			let data = Array.from(this._data);
 			let linkto = data[0].link;
@@ -1152,8 +1152,8 @@ class SmartPolygonElement extends HTMLElement {
 		this._stpgn.init(this._o);
 
 		// resize own svg
-		this._svgroot.setAttribute('height', this._stpgn._rect.height);
-		this._svgroot.setAttribute('width', this._stpgn._rect.width);
+		this._svgroot.setAttribute("height", "100%");
+		this._svgroot.setAttribute("width", "100%");
 		this._svgroot.setAttribute('viewBox', `0 0 ${this._stpgn._rect.width} ${this._stpgn._rect.height}`);
 
     }

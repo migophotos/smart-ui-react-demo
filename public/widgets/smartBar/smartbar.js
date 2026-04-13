@@ -1547,8 +1547,8 @@ class SmartBarElement extends HTMLElement {
     // all specific work will be done inside
     this._stbar.init(this._o);
 
-    this._svgroot.setAttribute("height", this._stbar._barBody.height);
-    this._svgroot.setAttribute("width", this._stbar._barBody.width);
+    this._svgroot.setAttribute("height", "100%");
+    this._svgroot.setAttribute("width", "100%");
     this._svgroot.setAttribute("viewBox", `0 0 ${this._stbar._barBody.width} ${this._stbar._barBody.height}`);
   }
   disconnectedCallback() {

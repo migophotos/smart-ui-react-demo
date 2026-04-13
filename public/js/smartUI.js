@@ -1214,8 +1214,8 @@ class SmartUiColorBox extends HTMLElement {
                     <div class="title">${_(this.getAttribute('title'))}</div>
 
                     <div class="slider">
-                        <input name="colorbox" class="slider-bar" id="colorbox" type="color" value="${this.getAttribute('value')}">
-                        <input id="IC" type="text" value="${this.getAttribute('value')} ">
+                        <input name="colorbox" class="slider-bar" id="colorbox" type="color" value="${this.getAttribute('value')|| '#000000'}">
+                        <input id="IC" type="text" value="${this.getAttribute('value')|| '#000000'} ">
                     </div>
                 </div>
             </div>

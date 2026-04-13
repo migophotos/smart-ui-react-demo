@@ -1,0 +1,62 @@
+{
+  "categories":[
+    { "id": "bars", "title": "Индикаторы и Бары", "icon": "images/bar_off.svg" },
+    { "id": "pies", "title": "Круговые диаграммы", "icon": "images/pie_off.svg" },
+    { "id": "polygons", "title": "Полигоны и Звезды", "icon": "images/polygon_off.svg" }
+  ],
+  "widgets":[
+    {
+      "category": "bars",
+      "label": "Горизонтальный Бар",
+      "tag": "smart-ui-bar",
+      "preset": "stbar-.-.-discrete-.-.-30-120-3.5-right-.-.-.-cd-.-.-.-.-.-.-.-.-.-.-.-.-.-.-none-.-0-0-#408080-.-.-5-.-.-10-.-.-.-.-.-0",
+      "box_size": {
+        "ideal": {
+          "width": 120,
+          "height": 30
+        }
+      }
+    },
+    {
+      "category": "bars",
+      "label": "Вертикальная Линия",
+      "tag": "smart-ui-bar",
+      "preset": "stbar-.-.-.-ver-up-20-120-.-none-.-.-.-cd-.-.-.-.-.-.-.-.-.-.-.-.-.-.-none-both-.-0-#fdfffc-#000000-.-.-.-.-10-.-#fefdff-1-.-.-0",
+      "box_size": {
+        "ideal": {
+          "width": 30,
+          "height": 120
+        }
+      }
+    },
+    {
+      "category": "pies",
+      "label": "Относительный Пирог",
+      "tag": "smart-ui-pie",
+      "preset": "stpie-.-.-rel-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-",
+      "box_size": {
+        "ideal": {
+          "width": 100,
+          "height": 100
+        }
+      }
+    },
+    {
+      "category": "polygons",
+      "label": "Звезда (5 лучей)",
+      "tag": "smart-ui-polygon",
+      "preset": "stpgn-.-.-ver-up-36.5-.-.-.-.-.-5-.-.-.-.-.-.-1-.-.-.-.-0-.-.-.-.-fill-none-.-.-.-.-.-2-.-.-0",
+      "box_size": {
+        "ideal": {
+          "width": 100,
+          "height": 100
+        }
+      }
+    }
+  ],
+  "canvas": {
+    "defaultWidth": 800,
+    "defaultHeight": 600,
+    "gridSize": 20
+  }
+}

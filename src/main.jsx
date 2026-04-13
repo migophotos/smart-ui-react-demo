@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import AppCustom from './AppCustom.jsx' // <--- Прошлые версии можно закомментировать
-import FullBuilder from './FullBuilder.jsx' // <--- 1. ИМПОРТИРУЕМ НАШ НОВЫЙ БИЛДЕР
+import DashboardBuilder from './DashboardBuilder.jsx' // <--- 1. Импортируем наш новый Билдер
+// import './index.css' // (можете удалить эту строку, если не используете дефолтные стили)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <FullBuilder /> {/* <--- 2. ЗАПУСКАЕМ ЕГО ЗДЕСЬ! */}
+    <DashboardBuilder /> {/* <--- 2. Рендерим его здесь */}
   </React.StrictMode>,
 )

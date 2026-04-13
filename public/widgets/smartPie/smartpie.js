@@ -1787,8 +1787,8 @@ class SmartPieElement extends HTMLElement {
 		// all specific work will be done inside
 		this._stpie.init(this._o);
 		// resize own svg
-		this._svgroot.setAttribute('height', this._stpie._o.rect.height);
-		this._svgroot.setAttribute('width', this._stpie._o.rect.width);
+		this._svgroot.setAttribute("height", "100%");
+		this._svgroot.setAttribute("width", "100%");
 		this._svgroot.setAttribute('viewBox', `0 0 ${this._stpie._o.rect.width} ${this._stpie._o.rect.height}`);
 
     }
